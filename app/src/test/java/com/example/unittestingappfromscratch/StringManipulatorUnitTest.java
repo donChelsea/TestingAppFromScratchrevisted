@@ -60,6 +60,28 @@ public class StringManipulatorUnitTest {
         Assert.assertEquals("aepgpglses", actual);
     }
 
+    @Test
+    public void deconstructedWordNoVowels() {
+        String input = "gnmdklfm";
+        String actual = stringManipulator.deconstructedWord(input);
+        Assert.assertEquals(input, actual);
+    }
+
+    @Test
+    public void deconstructuredWordNull() {
+        String input = null;
+        String actual = stringManipulator.deconstructedWord(input);
+        Assert.assertNotNull(actual);
+    }
+
+    @Test
+    public void wordSumEmpty() {
+        String input1 = "";
+        String input2 = "";
+        int actual = stringManipulator.wordSum(input1, input2);
+        Assert.assertEquals(0, actual);
+    }
+
     @After
     public void tearDown() throws Exception {
         stringManipulator = null;
